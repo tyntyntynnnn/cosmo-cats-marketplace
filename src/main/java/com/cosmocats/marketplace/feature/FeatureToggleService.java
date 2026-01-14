@@ -1,21 +1,18 @@
 package com.cosmocats.marketplace.feature;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-@Configuration
-@ConfigurationProperties(prefix = "feature")
-@Getter
-@Setter
-public class FeatureProperties {
+@Service
+@RequiredArgsConstructor
+public class FeatureToggleService {
 
-    private CosmoCats cosmoCats = new CosmoCats();
+    private final FeatureProperties featureProperties;
 
-    @Getter
-    @Setter
-    public static class CosmoCats {
-        private boolean enabled;
+    public boolean isEnabled(String featureName) {
+        if ("cosmoCats".equals(featureName)) {
+            return featureProperties.getCosmoCats().isEnabled();
+        }
+        return false;
     }
 }
