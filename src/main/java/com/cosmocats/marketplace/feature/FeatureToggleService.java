@@ -1,22 +1,21 @@
 package com.cosmocats.marketplace.feature;
 
-import org.springframework.beans.factory.annotation.Value;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Map;
-
 @Configuration
-public class FeatureToggleService {
+@ConfigurationProperties(prefix = "feature")
+@Getter
+@Setter
+public class FeatureProperties {
 
-    private final Map<String, Boolean> featureFlags;
+    private CosmoCats cosmoCats = new CosmoCats();
 
-    public FeatureToggleService(
-            @Value("#{${feature.flags:{}}}") Map<String, Boolean> featureFlags
-    ) {
-        this.featureFlags = featureFlags;
-    }
-
-    public boolean isEnabled(String featureName) {
-        return featureFlags.getOrDefault(featureName, false);
+    @Getter
+    @Setter
+    public static class CosmoCats {
+        private boolean enabled;
     }
 }
