@@ -1,59 +1,83 @@
-# 🐱 Cosmo Cats Intergalactic Marketplace
+🐱 Cosmo Cats Intergalactic Marketplace
 
-Backend service for a fictional intergalactic marketplace selling cosmic products such as anti-gravity yarn balls and cosmic milk.
+Backend-сервіс для вигаданого міжгалактичного маркетплейсу, де продаються космічні товари — від антигравітаційних клубків пряжі до космічного молока.
 
-## 📌 Laboratory Work 1.1
-**Course:** Java Web  
-**Topic:** API Contract, Error Handling, DDD, CRUD, Validation
+📌 Лабораторна робота 1.1
 
-## 🎯 Goal
-Design and implement a backend architecture for the Cosmo Cats Intergalactic Marketplace platform using Domain-Driven Design principles.  
-The project includes API contract definition, validation, error handling, and CRUD operations using mock data.
+Курс: Java Web
+Тема: API Contract, обробка помилок, DDD, CRUD, валідація
 
-## 🚀 Features
-- CRUD operations for Product entity
-- OpenAPI (Swagger) API Contract (YAML)
-- Domain-Driven Design (DDD) architecture
-- Jakarta Bean Validation
-- Custom validation annotation (`@CosmicWordCheck`)
-- Global error handling compliant with RFC 9457
-- In-memory mock storage (no database)
+🎯 Мета роботи
 
-## 🧠 Domain Model
-- **Product** — cosmic goods sold on the marketplace
-- **Category** — product grouping
-- **Order** — customer orders
-- **Cart** — shopping cart with selected products
+Спроєктувати та реалізувати серверну частину платформи Cosmo Cats Intergalactic Marketplace з використанням принципів Domain-Driven Design.
+Проєкт охоплює опис API-контракту, валідацію даних, глобальну обробку помилок і CRUD-операції з використанням мок-даних.
 
-## 📄 API Specification
-The API contract is described using OpenAPI 3.0 and can be found here:
+🚀 Функціональні можливості
+
+CRUD-операції для сутності Product
+
+API-контракт у форматі OpenAPI (Swagger, YAML)
+
+Архітектура на основі DDD
+
+Валідація через Jakarta Bean Validation
+
+Кастомна анотація валідації (@CosmicWordCheck)
+
+Глобальна обробка помилок відповідно до RFC 9457
+
+In-memory сховище без використання бази даних
+
+🧠 Доменна модель
+
+Product — космічні товари маркетплейсу
+
+Category — категорії товарів
+
+Order — замовлення клієнтів
+
+Cart — кошик із вибраними продуктами
+
+📄 API-специфікація
+
+API-контракт описано за стандартом OpenAPI 3.0 та розміщено за шляхом:
 src/main/resources/api-specs/product-api.yml
 
-The specification includes:
-- CRUD endpoints for Product
-- Request/response schemas
-- Validation rules
+У специфікації визначено:
 
-## 🧪 Validation
-### Standard validation
-- `@NotNull`
-- `@Size`
-- `@DecimalMin`
+CRUD-ендпоїнти для Product
 
-### Custom validation
-`@CosmicWordCheck` ensures that product names contain at least one cosmic keyword:
-- `star`
-- `galaxy`
-- `comet`
-- 
-Example:
+Схеми запитів і відповідей
+
+Правила валідації
+
+🧪 Валідація
+Стандартні обмеження
+
+@NotNull
+
+@Size
+
+@DecimalMin
+
+Кастомна валідація
+
+Анотація @CosmicWordCheck перевіряє, чи містить назва продукту хоча б одне «космічне» ключове слово:
+
+star
+
+galaxy
+
+comet
+
+Приклад:
 “galaxy milk” ✅
 “space rock” ❌
 
-## ⚠️ Error Handling
-Validation and request errors are handled globally and follow **RFC 9457** structure:
+⚠️ Обробка помилок
 
-```json
+Помилки валідації та некоректні запити обробляються глобально й повертаються у форматі, що відповідає RFC 9457:
+
 {
   "status": 400,
   "error": "Bad Request",
