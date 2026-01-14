@@ -29,9 +29,10 @@ jobs:
           restore-keys: |
             gradle-
       # Run Gradle build and tests with coverage
-      - name: Build with Gradle
-        run: ./gradlew clean build jacocoTestReport
-        run: ./gradlew clean build
+       - name: Run tests and coverage
+  run: |
+    ./gradlew test
+    ./gradlew jacocoTestReport
 
       # Upload the JaCoCo test coverage report
       - name: Upload coverage report
