@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @TestPropertySource(properties = {
-        "feature.flags.cosmoCats=true"
+    "feature.cosmoCats.enabled=true"
+})
 })
 class CosmoCatServiceTest {
 
