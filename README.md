@@ -1,4 +1,4 @@
- Cosmo Cats Intergalactіc Marketplacе
+ Cosmo Cats Intergalactіc Marketplаcе
 
 Backend-сeрвіс для вигаданого міжгалактичного маркетплейсу, де продаються космічні товари — від антигравітаційних клубків пряжі до космічного молока.
 
