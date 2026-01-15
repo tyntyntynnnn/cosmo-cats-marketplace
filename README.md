@@ -23,7 +23,7 @@ API-контракт у форматі OpenAPI (Swagger, YAML)
 
 Валідація через Jakarta Bean Validation
 
-Кастомна анотація валідації (@CosmicWordCheck)
+Кaстомна анотація валідації (@CosmicWordCheck)
 
 Глoбальна обробка помилок відповідно до RFC 9457
 
