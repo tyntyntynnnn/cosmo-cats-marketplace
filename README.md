@@ -46,7 +46,7 @@ src/main/resources/api-specs/product-api.yml
 
 У специфікації визначено:
 
-CRUD-ендпоїнти для Product
+CRUD-ендпоїнтu для Product
 
 Схеми запитів і відповідей
 
