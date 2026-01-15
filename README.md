@@ -19,7 +19,7 @@ CRUD-операцiї для сутності Product
 
 API-контракт у форматі OpenAPI (Swagger, YAML)
 
-Архітектура на основі DDD
+Архiтектура на основі DDD
 
 Валідація через Jakarta Bean Validation
 
